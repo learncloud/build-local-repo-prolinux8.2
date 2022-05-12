@@ -7,11 +7,11 @@
 
 ### Pro linux 8.2 설치
 - Prolinux ISO설치후  기본적인 서버 세팅을 진행합니다 (vm 세팅)
-    ![image](figure/download_prolinux8.2.png)
+    ![image](local_repo/figure/download_prolinux8.2.png)
 
 
 - Prolinux 파일다운
-    ![image](figure/download_prolinux8.2-2.png)
+    ![image](local_repo/figure/download_prolinux8.2-2.png)
 
 
 
