@@ -18,7 +18,7 @@
 ### Filezilla를 이용해 파일 복사
 
 - 서버에 원격 연결한 후 파일 업로드
-    ![image](figure/con-filezila.png)
+    ![image](localrepo/figure/con-filezila.png)
 
 
 - 다운받은 iso파일 압축 해제
