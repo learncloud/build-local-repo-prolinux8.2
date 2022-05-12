@@ -1,0 +1,36 @@
+21.03.30
+  CK2-1팀 요청
+	- crio v1.19.1
+	- podman v2.2.1
+	- keepalived v2.0.10
+	- kubeadm v1.19.4
+	- kubelet v1.19.4
+	- kubectl v1.19.4
+	- HA-Proxy v1.5.18
+	- docker-ce
+	- nvidia-container-toolkit (for crio, 1.4.2-2)
+	- nvidia-docker2 (for docker, 2.5.0-1)
+	- kernel-devel
+	- kernel-headers
+	- gcc
+	- make
+	- dkms
+	- jq
+	- vim
+
+  CK2-2팀 요청 (tools..)
+	- createrepo
+	- git
+	- wget
+
+  CK2-3팀 요청
+
+  CK2-4팀 요청
+	- ceph-common-15.2.8
+	- cephadm-15.2.8
+	- chronyd
+	- iscsi-initiator
+	- lvm2
+	- nfs-utils
+	- podman
+	- python3

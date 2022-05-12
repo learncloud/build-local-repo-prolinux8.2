@@ -1,0 +1,748 @@
+---
+document: modulemd-defaults
+version: 1
+data:
+  module: container-tools
+  stream: rhel8
+  profiles:
+    rhel8: [common]
+...
+---
+document: modulemd
+version: 2
+data:
+  name: container-tools
+  stream: rhel8
+  version: 8030020210222041215
+  context: 2a301c24
+  arch: x86_64
+  summary: Most recent (rolling) versions of podman, buildah, skopeo, runc, conmon,
+    runc, conmon, CRIU, Udica, etc as well as dependencies such as container-selinux
+    built and tested together, and updated as frequently as every 12 weeks.
+  description: >-
+    Latest versions of podman, buildah, skopeo, runc, conmon, CRIU, Udica, etc as
+    well as dependencies such as container-selinux built and tested together, and
+    updated as frequently as every 12 weeks. Only very limited back ports are provided
+    to this stream, and most patches come from providing new versions.
+  license:
+    module:
+    - MIT
+    content:
+    - ASL 2.0
+    - ASL 2.0 and GPLv3+
+    - BSD and MIT
+    - GPLv2
+    - GPLv2+
+    - GPLv3+
+    - LGPLv2
+    - LGPLv2+
+  xmd: {}
+  dependencies:
+  - buildrequires:
+      go-toolset: [rhel8]
+      golang-ecosystem: [1.0]
+      platform: [el8.3.0]
+    requires:
+      platform: [el8]
+  references:
+    community: https://github.com/projectatomic
+    documentation: https://projectatomic.io
+    tracker: https://github.com/projectatomic
+  profiles:
+    common:
+      rpms:
+      - buildah
+      - cockpit-podman
+      - conmon
+      - container-selinux
+      - containernetworking-plugins
+      - criu
+      - crun
+      - fuse-overlayfs
+      - libslirp
+      - podman
+      - python-podman-api
+      - runc
+      - skopeo
+      - slirp4netns
+      - toolbox
+      - udica
+  api:
+    rpms:
+    - buildah
+    - conmon
+    - container-selinux
+    - containernetworking-plugins
+    - containers-common
+    - fuse-overlayfs
+    - libslirp
+    - podman
+    - podman-docker
+    - podman-manpages
+    - podman-remote
+    - python-podman-api
+    - runc
+    - skopeo
+    - slirp4netns
+  buildopts:
+    rpms:
+      macros: >
+        %_with_ignore_tests 1
+  components:
+    rpms:
+      buildah:
+        rationale: Primary component of this module
+        ref: c937dae5d42397752538a917593dd5b440e348c0
+        arches: [aarch64, i686, ppc64le, x86_64]
+      cockpit-podman:
+        rationale: Primary component of this module
+        ref: b777bb76eb0ccd54ede2346f33013c397bb8fdb3
+        arches: [aarch64, i686, ppc64le, x86_64]
+      conmon:
+        rationale: Primary component of this module
+        ref: a125cdefa31d3a9a680bad999163ee6feed1aebb
+        arches: [aarch64, i686, ppc64le, x86_64]
+      container-selinux:
+        rationale: Primary component of this module
+        ref: b0856be64535d15af04bbf901375b8631986418d
+        arches: [aarch64, i686, ppc64le, x86_64]
+      containernetworking-plugins:
+        rationale: Primary component of this module
+        ref: 5bc927effc6d614a22bb0fdc0d02bde01bdd658b
+        arches: [aarch64, i686, ppc64le, x86_64]
+      criu:
+        rationale: Primary component of this module
+        ref: 13335dc395b9f62a22e3e218b083471a4213a1c3
+        arches: [aarch64, i686, ppc64le, x86_64]
+      crun:
+        rationale: Primary component of this module
+        ref: e1b5cf900264b38d54abfb98bb49daf2c705b29b
+        arches: [aarch64, i686, ppc64le, x86_64]
+      fuse-overlayfs:
+        rationale: Primary component of this module
+        ref: 9fd7b133946c0afb57cbfe25f53e4ede737a318b
+        arches: [aarch64, i686, ppc64le, x86_64]
+      libslirp:
+        rationale: Primary component of this module
+        ref: 4cbaabca93711fd52d99a34142eb43d2fe6bcf08
+        buildorder: 18446744073709551615
+        arches: [aarch64, i686, ppc64le, x86_64]
+      oci-seccomp-bpf-hook:
+        rationale: Primary component of this module
+        ref: 0c22e2e0d632f8f060e74d109e430c67feb11a7c
+        arches: [aarch64, i686, ppc64le, x86_64]
+      podman:
+        rationale: Primary component of this module
+        ref: e55a9453049bbfcf19e2d562fa60e0b4d7823f91
+        arches: [aarch64, i686, ppc64le, x86_64]
+      python-podman-api:
+        rationale: Primary component of this module
+        ref: 1cd9eb4c85378ff671967ab5d2acaf596c3f0765
+        arches: [aarch64, i686, ppc64le, x86_64]
+      runc:
+        rationale: Primary component of this module
+        ref: e44bd2fb726d948499294700f1a47080a62c770e
+        arches: [aarch64, i686, ppc64le, x86_64]
+      skopeo:
+        rationale: Primary component of this module
+        ref: a460b1be7c4ee6fb283910f1cd9bb1536d43c56b
+        arches: [aarch64, i686, ppc64le, x86_64]
+      slirp4netns:
+        rationale: Primary component of this module
+        ref: a9e0224a50450e43fabd34d2ec0b30bf03a5bdc3
+        arches: [aarch64, i686, ppc64le, x86_64]
+      toolbox:
+        rationale: Primary component of this module
+        ref: c380bab89cb0d429591e06976392c0484227cbb6
+        arches: [aarch64, i686, ppc64le, x86_64]
+      udica:
+        rationale: Primary component of this module
+        ref: fd52829b49626e6d5ba535c282a1e32f0ef0f93f
+        arches: [aarch64, i686, ppc64le, x86_64]
+  artifacts:
+    rpms:
+    - buildah-0:1.16.7-4.module_el8.3.0+699+d61d9c41.src
+    - buildah-0:1.16.7-4.module_el8.3.0+699+d61d9c41.x86_64
+    - buildah-debuginfo-0:1.16.7-4.module_el8.3.0+699+d61d9c41.x86_64
+    - buildah-debugsource-0:1.16.7-4.module_el8.3.0+699+d61d9c41.x86_64
+    - buildah-tests-0:1.16.7-4.module_el8.3.0+699+d61d9c41.x86_64
+    - buildah-tests-debuginfo-0:1.16.7-4.module_el8.3.0+699+d61d9c41.x86_64
+    - cockpit-podman-0:27.1-3.module_el8.3.0+699+d61d9c41.noarch
+    - cockpit-podman-0:27.1-3.module_el8.3.0+699+d61d9c41.src
+    - conmon-2:2.0.22-3.module_el8.3.0+699+d61d9c41.src
+    - conmon-2:2.0.22-3.module_el8.3.0+699+d61d9c41.x86_64
+    - conmon-debuginfo-2:2.0.22-3.module_el8.3.0+699+d61d9c41.x86_64
+    - conmon-debugsource-2:2.0.22-3.module_el8.3.0+699+d61d9c41.x86_64
+    - container-selinux-2:2.155.0-1.module_el8.3.0+699+d61d9c41.noarch
+    - container-selinux-2:2.155.0-1.module_el8.3.0+699+d61d9c41.src
+    - containernetworking-plugins-0:0.9.0-1.module_el8.3.0+699+d61d9c41.src
+    - containernetworking-plugins-0:0.9.0-1.module_el8.3.0+699+d61d9c41.x86_64
+    - containernetworking-plugins-debuginfo-0:0.9.0-1.module_el8.3.0+699+d61d9c41.x86_64
+    - containernetworking-plugins-debugsource-0:0.9.0-1.module_el8.3.0+699+d61d9c41.x86_64
+    - containers-common-1:1.2.0-9.module_el8.3.0+699+d61d9c41.x86_64
+    - crit-0:3.15-1.module_el8.3.0+699+d61d9c41.x86_64
+    - criu-0:3.15-1.module_el8.3.0+699+d61d9c41.src
+    - criu-0:3.15-1.module_el8.3.0+699+d61d9c41.x86_64
+    - criu-debuginfo-0:3.15-1.module_el8.3.0+699+d61d9c41.x86_64
+    - criu-debugsource-0:3.15-1.module_el8.3.0+699+d61d9c41.x86_64
+    - crun-0:0.16-2.module_el8.3.0+699+d61d9c41.src
+    - crun-0:0.16-2.module_el8.3.0+699+d61d9c41.x86_64
+    - crun-debuginfo-0:0.16-2.module_el8.3.0+699+d61d9c41.x86_64
+    - crun-debugsource-0:0.16-2.module_el8.3.0+699+d61d9c41.x86_64
+    - fuse-overlayfs-0:1.3.0-2.module_el8.3.0+699+d61d9c41.src
+    - fuse-overlayfs-0:1.3.0-2.module_el8.3.0+699+d61d9c41.x86_64
+    - fuse-overlayfs-debuginfo-0:1.3.0-2.module_el8.3.0+699+d61d9c41.x86_64
+    - fuse-overlayfs-debugsource-0:1.3.0-2.module_el8.3.0+699+d61d9c41.x86_64
+    - libslirp-0:4.3.1-1.module_el8.3.0+475+c50ce30b.src
+    - libslirp-0:4.3.1-1.module_el8.3.0+475+c50ce30b.x86_64
+    - libslirp-debuginfo-0:4.3.1-1.module_el8.3.0+475+c50ce30b.x86_64
+    - libslirp-debugsource-0:4.3.1-1.module_el8.3.0+475+c50ce30b.x86_64
+    - libslirp-devel-0:4.3.1-1.module_el8.3.0+475+c50ce30b.x86_64
+    - oci-seccomp-bpf-hook-0:1.2.0-1.module_el8.3.0+699+d61d9c41.src
+    - oci-seccomp-bpf-hook-0:1.2.0-1.module_el8.3.0+699+d61d9c41.x86_64
+    - oci-seccomp-bpf-hook-debuginfo-0:1.2.0-1.module_el8.3.0+699+d61d9c41.x86_64
+    - oci-seccomp-bpf-hook-debugsource-0:1.2.0-1.module_el8.3.0+699+d61d9c41.x86_64
+    - podman-0:2.2.1-7.module_el8.3.0+699+d61d9c41.src
+    - podman-0:2.2.1-7.module_el8.3.0+699+d61d9c41.x86_64
+    - podman-catatonit-0:2.2.1-7.module_el8.3.0+699+d61d9c41.x86_64
+    - podman-catatonit-debuginfo-0:2.2.1-7.module_el8.3.0+699+d61d9c41.x86_64
+    - podman-debuginfo-0:2.2.1-7.module_el8.3.0+699+d61d9c41.x86_64
+    - podman-debugsource-0:2.2.1-7.module_el8.3.0+699+d61d9c41.x86_64
+    - podman-docker-0:2.2.1-7.module_el8.3.0+699+d61d9c41.noarch
+    - podman-plugins-0:2.2.1-7.module_el8.3.0+699+d61d9c41.x86_64
+    - podman-plugins-debuginfo-0:2.2.1-7.module_el8.3.0+699+d61d9c41.x86_64
+    - podman-remote-0:2.2.1-7.module_el8.3.0+699+d61d9c41.x86_64
+    - podman-remote-debuginfo-0:2.2.1-7.module_el8.3.0+699+d61d9c41.x86_64
+    - podman-tests-0:2.2.1-7.module_el8.3.0+699+d61d9c41.x86_64
+    - python-podman-api-0:1.2.0-0.2.gitd0a45fe.module_el8.3.0+475+c50ce30b.noarch
+    - python-podman-api-0:1.2.0-0.2.gitd0a45fe.module_el8.3.0+475+c50ce30b.src
+    - python3-criu-0:3.15-1.module_el8.3.0+699+d61d9c41.x86_64
+    - runc-0:1.0.0-70.rc92.module_el8.3.0+699+d61d9c41.src
+    - runc-0:1.0.0-70.rc92.module_el8.3.0+699+d61d9c41.x86_64
+    - runc-debuginfo-0:1.0.0-70.rc92.module_el8.3.0+699+d61d9c41.x86_64
+    - runc-debugsource-0:1.0.0-70.rc92.module_el8.3.0+699+d61d9c41.x86_64
+    - skopeo-1:1.2.0-9.module_el8.3.0+699+d61d9c41.src
+    - skopeo-1:1.2.0-9.module_el8.3.0+699+d61d9c41.x86_64
+    - skopeo-debuginfo-1:1.2.0-9.module_el8.3.0+699+d61d9c41.x86_64
+    - skopeo-debugsource-1:1.2.0-9.module_el8.3.0+699+d61d9c41.x86_64
+    - skopeo-tests-1:1.2.0-9.module_el8.3.0+699+d61d9c41.x86_64
+    - slirp4netns-0:1.1.8-1.module_el8.3.0+699+d61d9c41.src
+    - slirp4netns-0:1.1.8-1.module_el8.3.0+699+d61d9c41.x86_64
+    - slirp4netns-debuginfo-0:1.1.8-1.module_el8.3.0+699+d61d9c41.x86_64
+    - slirp4netns-debugsource-0:1.1.8-1.module_el8.3.0+699+d61d9c41.x86_64
+    - toolbox-0:0.0.8-1.module_el8.3.0+475+c50ce30b.noarch
+    - toolbox-0:0.0.8-1.module_el8.3.0+475+c50ce30b.src
+    - udica-0:0.2.4-1.module_el8.3.0+699+d61d9c41.noarch
+    - udica-0:0.2.4-1.module_el8.3.0+699+d61d9c41.src
+...
+---
+document: modulemd-defaults
+version: 1
+data:
+  module: perl-IO-Socket-SSL
+  stream: 2.066
+  profiles:
+    2.066: [common]
+...
+---
+document: modulemd
+version: 2
+data:
+  name: perl-IO-Socket-SSL
+  stream: 2.066
+  version: 8030020201222215140
+  context: 1e4bbb35
+  arch: x86_64
+  summary: Perl library for transparent TLS
+  description: >
+    IO::Socket::SSL is a drop-in replacement for IO::Socket::IP that uses TLS to encrypt
+    data before it is transferred to a remote server or client. IO::Socket::SSL supports
+    all the extra features that one needs to write a full-featured TLS client or server
+    application like multiple TLS contexts, cipher selection, certificate verification,
+    and TLS version selection. Net::SSLeay offers some high level convenience functions
+    for accessing web pages on TLS servers, a sslcat() function for writing your own
+    clients, and finally access to the API of OpenSSL library so you can write servers
+    or clients for more complicated applications.
+  license:
+    module:
+    - MIT
+    content:
+    - (GPL+ or Artistic) and MPLv2.0
+    - Artistic 2.0
+  xmd: {}
+  dependencies:
+  - buildrequires:
+      perl: [5.26]
+      platform: [el8.3.0]
+    requires:
+      perl: [5.26]
+      platform: [el8]
+  references:
+    community: https://metacpan.org/release/IO-Socket-SSL
+  profiles:
+    common:
+      description: IO::Socket::SSL and Net::SSLeay
+      rpms:
+      - perl-IO-Socket-SSL
+      - perl-Net-SSLeay
+  api:
+    rpms:
+    - perl-IO-Socket-SSL
+    - perl-Net-SSLeay
+  filter:
+    rpms:
+    - perl-Devel-StackTrace
+    - perl-IO-Socket-INET6
+    - perl-IO-Tty
+    - perl-IPC-Run
+    - perl-Net-IDN-Encode
+    - perl-Net-LibIDN
+    - perl-Socket6
+    - perl-Test-NoWarnings
+  components:
+    rpms:
+      perl-Devel-StackTrace:
+        rationale: A build dependency.
+        ref: 96efdcd5d1c2ed8a3d86a0a62c4a80a009fa03de
+        arches: [aarch64, i686, ppc64le, x86_64]
+      perl-IO-Socket-INET6:
+        rationale: A build dependency.
+        ref: 468bba3f4a26f522e3f7666575ff940a7d333720
+        buildorder: 1
+        arches: [aarch64, i686, ppc64le, x86_64]
+      perl-IO-Socket-SSL:
+        rationale: The API.
+        ref: 21b1f5897e10f8d38a0f5bdea6752b182459f23e
+        buildorder: 3
+        arches: [aarch64, i686, ppc64le, x86_64]
+      perl-IO-Tty:
+        rationale: A build dependency.
+        ref: 45881777e08f740d0fa693e8fdaba94cf3c34840
+        arches: [aarch64, i686, ppc64le, x86_64]
+      perl-IPC-Run:
+        rationale: A build dependency.
+        ref: 6a03807c84ed7142e301aa43c6dd2fc4543740df
+        buildorder: 1
+        arches: [aarch64, i686, ppc64le, x86_64]
+      perl-Net-IDN-Encode:
+        rationale: A build dependency.
+        ref: e6287ef850d79a4be69a55ffd28bfaf057346e1f
+        buildorder: 2
+        arches: [aarch64, i686, ppc64le, x86_64]
+      perl-Net-LibIDN:
+        rationale: A build dependency.
+        ref: 2b082f9db24e80f9f34ef47abffba8f9a6f3a395
+        arches: [aarch64, i686, ppc64le, x86_64]
+      perl-Net-SSLeay:
+        rationale: The API.
+        ref: 6edbc4f6b5a8a961c9d08518de4720a8bc02c697
+        arches: [aarch64, i686, ppc64le, x86_64]
+      perl-Socket6:
+        rationale: A build dependency.
+        ref: bed8537b8005e988d6f50781e2374ece7f54e112
+        arches: [aarch64, i686, ppc64le, x86_64]
+      perl-Test-NoWarnings:
+        rationale: A build dependency.
+        ref: 7ab4a745bffefc821d69bc831a4be6a91118c15e
+        buildorder: 1
+        arches: [aarch64, i686, ppc64le, x86_64]
+  artifacts:
+    rpms:
+    - perl-IO-Socket-SSL-0:2.066-4.module_el8.3.0+410+ff426aa3.noarch
+    - perl-IO-Socket-SSL-0:2.066-4.module_el8.3.0+410+ff426aa3.src
+    - perl-Net-SSLeay-0:1.88-1.module_el8.3.0+410+ff426aa3.src
+    - perl-Net-SSLeay-0:1.88-1.module_el8.3.0+410+ff426aa3.x86_64
+    - perl-Net-SSLeay-debuginfo-0:1.88-1.module_el8.3.0+410+ff426aa3.x86_64
+    - perl-Net-SSLeay-debugsource-0:1.88-1.module_el8.3.0+410+ff426aa3.x86_64
+...
+---
+document: modulemd-defaults
+version: 1
+data:
+  module: perl-libwww-perl
+  stream: 6.34
+  profiles:
+    6.34: [common]
+...
+---
+document: modulemd
+version: 2
+data:
+  name: perl-libwww-perl
+  stream: 6.34
+  version: 8030020201223164340
+  context: b967a9a2
+  arch: x86_64
+  summary: A Perl interface to the World-Wide Web
+  description: >
+    The libwww-perl collection is a set of Perl modules which provide a simple and
+    consistent application programming interface to the World-Wide Web. The main focus
+    of the library is to provide classes and functions that enable you to write WWW
+    clients. The library also contains modules that are of more general use and even
+    classes that help you implement simple HTTP servers. LWP::Protocol::https adds
+    a support for an HTTPS protocol.
+  license:
+    module:
+    - MIT
+    content:
+    - (GPL+ or Artistic) and Public Domain
+    - GPL+ or Artistic
+    - MIT
+    - MPLv2.0
+  xmd: {}
+  dependencies:
+  - buildrequires:
+      perl: [5.26]
+      perl-IO-Socket-SSL: [2.066]
+      platform: [el8.3.0]
+    requires:
+      perl: [5.26]
+      perl-IO-Socket-SSL: [2.066]
+      platform: [el8]
+  references:
+    community: https://metacpan.org/release/libwww-perl
+  profiles:
+    common:
+      description: LWP with HTTPS support
+      rpms:
+      - perl-LWP-Protocol-https
+      - perl-libwww-perl
+  api:
+    rpms:
+    - perl-LWP-Protocol-https
+    - perl-libwww-perl
+  filter:
+    rpms:
+    - perl-Digest-SHA1
+    - perl-HTTP-Daemon
+    - perl-Test-Fatal
+    - perl-Test-Pod
+    - perl-Test-RequiresInternet
+  buildopts:
+    rpms:
+      macros: >
+        %_without_perl_HTML_Tagset_enables_optional_test 1
+
+        %_without_perl_Test_Fatal_enables_extra_test 1
+
+        %_without_perl_Test_Fatal_enables_optional_test 1
+  components:
+    rpms:
+      perl-Data-Dump:
+        rationale: A run-time depenedency.
+        ref: bf0c7f8f51acb32fdc524b76c6078b508ad7bfd5
+        arches: [aarch64, i686, ppc64le, x86_64]
+      perl-Digest-HMAC:
+        rationale: A run-time dependency.
+        ref: 6b32005eaefb64147630053997f972975361886b
+        buildorder: 1
+        arches: [aarch64, i686, ppc64le, x86_64]
+      perl-Digest-SHA1:
+        rationale: A build dependency.
+        ref: b68cd6d810e8a866576c7b0196bb885ec59b5a7a
+        arches: [aarch64, i686, ppc64le, x86_64]
+      perl-Encode-Locale:
+        rationale: A run-time dependency.
+        ref: c056c7407b77caa6d57babafc5c343389c11fa16
+        arches: [aarch64, i686, ppc64le, x86_64]
+      perl-File-Listing:
+        rationale: A run-time dependency.
+        ref: 3a5e488564063017ba14e9cb6dfe6400dfc044b6
+        buildorder: 1
+        arches: [aarch64, i686, ppc64le, x86_64]
+      perl-HTML-Parser:
+        rationale: A run-time dependency.
+        ref: e3610b98a6b30b96019f53e1f4e6d8671acb48bd
+        buildorder: 2
+        arches: [aarch64, i686, ppc64le, x86_64]
+      perl-HTML-Tagset:
+        rationale: A run-time dependency.
+        ref: 071a5b31ca388524b34853321a0a731e30f341b4
+        arches: [aarch64, i686, ppc64le, x86_64]
+      perl-HTTP-Cookies:
+        rationale: A run-time dependency.
+        ref: 97ef576ec4a2a27265be429d248a573bfca43156
+        buildorder: 2
+        arches: [aarch64, i686, ppc64le, x86_64]
+      perl-HTTP-Daemon:
+        rationale: A build dependency.
+        ref: 570096e5fc15e65be75bba7681557cdc44a7c076
+        buildorder: 2
+        arches: [aarch64, i686, ppc64le, x86_64]
+      perl-HTTP-Date:
+        rationale: A run-time dependency.
+        ref: 5595663b854725a53e4374917bb2078074391552
+        arches: [aarch64, i686, ppc64le, x86_64]
+      perl-HTTP-Message:
+        rationale: A run-time dependency.
+        ref: b6597f6400861cf9440713b2d8bf3c3f2825fae6
+        buildorder: 1
+        arches: [aarch64, i686, ppc64le, x86_64]
+      perl-HTTP-Negotiate:
+        rationale: A run-time dependency.
+        ref: 7ea05dd3b1d2db9aa72f1dd811ac1028c6ccc2a2
+        buildorder: 2
+        arches: [aarch64, i686, ppc64le, x86_64]
+      perl-IO-HTML:
+        rationale: A run-time dependency.
+        ref: dc6e6c5eb4259fc63ac9b61099016f9f9176ea70
+        arches: [aarch64, i686, ppc64le, x86_64]
+      perl-LWP-MediaTypes:
+        rationale: A run-time dependency.
+        ref: 54d031b1b5e5bc043eb1489d04203ba5e9269923
+        arches: [aarch64, i686, ppc64le, x86_64]
+      perl-LWP-Protocol-https:
+        rationale: The API.
+        ref: ebdd3e6b99c15806d8549892b5d122625b238b4e
+        buildorder: 4
+        arches: [aarch64, i686, ppc64le, x86_64]
+      perl-Mozilla-CA:
+        rationale: A run-time dependency.
+        ref: 4f4d12cbd8b77e32745f7810844cfec76fe84e16
+        arches: [aarch64, i686, ppc64le, x86_64]
+      perl-NTLM:
+        rationale: A run-time dependency.
+        ref: 968d3fb6c5f834f3e597bb813d9f96fa04732481
+        buildorder: 2
+        arches: [aarch64, i686, ppc64le, x86_64]
+      perl-Net-HTTP:
+        rationale: A run-time dependency.
+        ref: 97df1bed807b14ac4727fca1d2854a6eb25a64ec
+        arches: [aarch64, i686, ppc64le, x86_64]
+      perl-Test-Fatal:
+        rationale: A build dependency.
+        ref: 65fe759bc84f6615e08ecb75ca2d8fb6ca4062f3
+        buildorder: 1
+        arches: [aarch64, i686, ppc64le, x86_64]
+      perl-Test-Pod:
+        rationale: A build dependency.
+        ref: f90cd604ab18485a1e20ce3a0052435c1f10845c
+        arches: [aarch64, i686, ppc64le, x86_64]
+      perl-Test-RequiresInternet:
+        rationale: A build dependency.
+        ref: 90a82978358f494a079f413bc7b3a46827b653b5
+        arches: [aarch64, i686, ppc64le, x86_64]
+      perl-TimeDate:
+        rationale: A run-time dependency.
+        ref: e1a334942c04d081858749781b1cbccf82ff41c5
+        arches: [aarch64, i686, ppc64le, x86_64]
+      perl-Try-Tiny:
+        rationale: A run-time dependency.
+        ref: 337d768ff2b8018fba0a272869565b1f1d3dfd61
+        arches: [aarch64, i686, ppc64le, x86_64]
+      perl-WWW-RobotRules:
+        rationale: A run-time dependency.
+        ref: 493d595460e45dd6ccc30145db93790de1c09607
+        arches: [aarch64, i686, ppc64le, x86_64]
+      perl-libwww-perl:
+        rationale: The API.
+        ref: cf93b41ee1e5aa583b67264a92fceecd3f255633
+        buildorder: 3
+        arches: [aarch64, i686, ppc64le, x86_64]
+  artifacts:
+    rpms:
+    - perl-Data-Dump-0:1.23-7.module_el8.3.0+416+dee7bcef.noarch
+    - perl-Data-Dump-0:1.23-7.module_el8.3.0+416+dee7bcef.src
+    - perl-Digest-HMAC-0:1.03-17.module_el8.3.0+416+dee7bcef.noarch
+    - perl-Digest-HMAC-0:1.03-17.module_el8.3.0+416+dee7bcef.src
+    - perl-Encode-Locale-0:1.05-10.module_el8.3.0+416+dee7bcef.noarch
+    - perl-Encode-Locale-0:1.05-10.module_el8.3.0+416+dee7bcef.src
+    - perl-File-Listing-0:6.04-17.module_el8.3.0+416+dee7bcef.noarch
+    - perl-File-Listing-0:6.04-17.module_el8.3.0+416+dee7bcef.src
+    - perl-HTML-Parser-0:3.72-15.module_el8.3.0+416+dee7bcef.src
+    - perl-HTML-Parser-0:3.72-15.module_el8.3.0+416+dee7bcef.x86_64
+    - perl-HTML-Parser-debuginfo-0:3.72-15.module_el8.3.0+416+dee7bcef.x86_64
+    - perl-HTML-Parser-debugsource-0:3.72-15.module_el8.3.0+416+dee7bcef.x86_64
+    - perl-HTML-Tagset-0:3.20-34.module_el8.3.0+416+dee7bcef.noarch
+    - perl-HTML-Tagset-0:3.20-34.module_el8.3.0+416+dee7bcef.src
+    - perl-HTTP-Cookies-0:6.04-2.module_el8.3.0+416+dee7bcef.noarch
+    - perl-HTTP-Cookies-0:6.04-2.module_el8.3.0+416+dee7bcef.src
+    - perl-HTTP-Date-0:6.02-19.module_el8.3.0+416+dee7bcef.noarch
+    - perl-HTTP-Date-0:6.02-19.module_el8.3.0+416+dee7bcef.src
+    - perl-HTTP-Message-0:6.18-1.module_el8.3.0+416+dee7bcef.noarch
+    - perl-HTTP-Message-0:6.18-1.module_el8.3.0+416+dee7bcef.src
+    - perl-HTTP-Negotiate-0:6.01-19.module_el8.3.0+416+dee7bcef.noarch
+    - perl-HTTP-Negotiate-0:6.01-19.module_el8.3.0+416+dee7bcef.src
+    - perl-IO-HTML-0:1.001-11.module_el8.3.0+416+dee7bcef.noarch
+    - perl-IO-HTML-0:1.001-11.module_el8.3.0+416+dee7bcef.src
+    - perl-LWP-MediaTypes-0:6.02-15.module_el8.3.0+416+dee7bcef.noarch
+    - perl-LWP-MediaTypes-0:6.02-15.module_el8.3.0+416+dee7bcef.src
+    - perl-LWP-Protocol-https-0:6.07-4.module_el8.3.0+416+dee7bcef.noarch
+    - perl-LWP-Protocol-https-0:6.07-4.module_el8.3.0+416+dee7bcef.src
+    - perl-Mozilla-CA-0:20160104-7.module_el8.3.0+416+dee7bcef.noarch
+    - perl-Mozilla-CA-0:20160104-7.module_el8.3.0+416+dee7bcef.src
+    - perl-NTLM-0:1.09-17.module_el8.3.0+416+dee7bcef.noarch
+    - perl-NTLM-0:1.09-17.module_el8.3.0+416+dee7bcef.src
+    - perl-Net-HTTP-0:6.17-2.module_el8.3.0+416+dee7bcef.noarch
+    - perl-Net-HTTP-0:6.17-2.module_el8.3.0+416+dee7bcef.src
+    - perl-TimeDate-1:2.30-15.module_el8.3.0+416+dee7bcef.noarch
+    - perl-TimeDate-1:2.30-15.module_el8.3.0+416+dee7bcef.src
+    - perl-Try-Tiny-0:0.30-7.module_el8.3.0+416+dee7bcef.noarch
+    - perl-Try-Tiny-0:0.30-7.module_el8.3.0+416+dee7bcef.src
+    - perl-WWW-RobotRules-0:6.02-18.module_el8.3.0+416+dee7bcef.noarch
+    - perl-WWW-RobotRules-0:6.02-18.module_el8.3.0+416+dee7bcef.src
+    - perl-libwww-perl-0:6.34-1.module_el8.3.0+416+dee7bcef.noarch
+    - perl-libwww-perl-0:6.34-1.module_el8.3.0+416+dee7bcef.src
+...
+  ---
+document: modulemd-defaults
+version: 1
+data:
+  module: perl
+  stream: 5.26
+  profiles:
+    5.26: [common]
+...
+---
+document: modulemd
+version: 2
+data:
+  name: perl
+  stream: 5.26
+  version: 8000020190628020724
+  context: 55190bc5
+  arch: x86_64
+  summary: Practical Extraction and Report Language
+  description: >
+    Perl is a high-level programming language with roots in C, sed, awk and shell
+    scripting. Perl is good at handling processes and files, and is especially good
+    at handling text. Perl's hallmarks are practicality and efficiency. While it is
+    used to do a lot of different things, Perl's most common applications are system
+    administration utilities and web programming.
+  license:
+    module:
+    - MIT
+  dependencies:
+  - buildrequires:
+      platform: [el8.0.0]
+    requires:
+      platform: [el8]
+  references:
+    community: https://docs.pagure.org/modularity/
+  profiles:
+    common:
+      description: Interpreter and all Perl modules bundled within upstream Perl.
+      rpms:
+      - perl
+    minimal:
+      description: Only the interpreter as a standalone executable.
+      rpms:
+      - perl-interpreter
+  api:
+    rpms:
+    - perl
+    - perl-Archive-Tar
+    - perl-Attribute-Handlers
+    - perl-B-Debug
+    - perl-CPAN
+    - perl-CPAN-Meta
+    - perl-CPAN-Meta-Requirements
+    - perl-CPAN-Meta-YAML
+    - perl-Carp
+    - perl-Compress-Raw-Bzip2
+    - perl-Compress-Raw-Zlib
+    - perl-Config-Perl-V
+    - perl-DB_File
+    - perl-Data-Dumper
+    - perl-Devel-PPPort
+    - perl-Devel-Peek
+    - perl-Devel-SelfStubber
+    - perl-Digest
+    - perl-Digest-MD5
+    - perl-Digest-SHA
+    - perl-Encode
+    - perl-Encode-devel
+    - perl-Env
+    - perl-Errno
+    - perl-Exporter
+    - perl-ExtUtils-CBuilder
+    - perl-ExtUtils-Command
+    - perl-ExtUtils-Embed
+    - perl-ExtUtils-Install
+    - perl-ExtUtils-MM-Utils
+    - perl-ExtUtils-MakeMaker
+    - perl-ExtUtils-Manifest
+    - perl-ExtUtils-Miniperl
+    - perl-ExtUtils-ParseXS
+    - perl-File-Fetch
+    - perl-File-Path
+    - perl-File-Temp
+    - perl-Filter
+    - perl-Filter-Simple
+    - perl-Getopt-Long
+    - perl-HTTP-Tiny
+    - perl-IO
+    - perl-IO-Compress
+    - perl-IO-Socket-IP
+    - perl-IO-Zlib
+    - perl-IPC-Cmd
+    - perl-IPC-SysV
+    - perl-JSON-PP
+    - perl-Locale-Codes
+    - perl-Locale-Maketext
+    - perl-Locale-Maketext-Simple
+    - perl-MIME-Base64
+    - perl-Math-BigInt
+    - perl-Math-BigInt-FastCalc
+    - perl-Math-BigRat
+    - perl-Math-Complex
+    - perl-Memoize
+    - perl-Module-CoreList
+    - perl-Module-CoreList-tools
+    - perl-Module-Load
+    - perl-Module-Load-Conditional
+    - perl-Module-Loaded
+    - perl-Module-Metadata
+    - perl-Net-Ping
+    - perl-Params-Check
+    - perl-PathTools
+    - perl-Perl-OSType
+    - perl-PerlIO-via-QuotedPrint
+    - perl-Pod-Checker
+    - perl-Pod-Escapes
+    - perl-Pod-Html
+    - perl-Pod-Parser
+    - perl-Pod-Perldoc
+    - perl-Pod-Simple
+    - perl-Pod-Usage
+    - perl-Scalar-List-Utils
+    - perl-SelfLoader
+    - perl-Socket
+    - perl-Storable
+    - perl-Sys-Syslog
+    - perl-Term-ANSIColor
+    - perl-Term-Cap
+    - perl-Test
+    - perl-Test-Harness
+    - perl-Test-Simple
+    - perl-Text-Balanced
+    - perl-Text-ParseWords
+    - perl-Text-Tabs+Wrap
+    - perl-Thread-Queue
+    - perl-Time-HiRes
+    - perl-Time-Local
+    - perl-Time-Piece
+    - perl-Unicode-Collate
+    - perl-Unicode-Normalize
+    - perl-autodie
+    - perl-bignum
+    - perl-constant
+    - perl-devel
+    - perl-encoding
+    - perl-experimental
+    - perl-generators
+    - perl-interpreter
+    - perl-libnet
+    - perl-libnetcfg
+    - perl-libs
+    - perl-macros
+    - perl-open
+    - perl-parent
+    - perl-perlfaq
+    - perl-podlators
+    - perl-tests
+    - perl-threads
+    - perl-threads-shared
+    - perl-utils
+    - perl-version
+...
