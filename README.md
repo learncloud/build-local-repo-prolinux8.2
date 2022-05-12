@@ -186,6 +186,7 @@ sudo yum list
         
 
     * nameserver 생성
+        - vi /etc/resolv.conf
         ![image](local_repo/figure/nameserver.png)
 
 
