@@ -180,13 +180,13 @@ sudo yum list
 
      * 모든 REPO에  `gpgcheck=0` 추가
         
-        ![image](figure/gpgcheck.png)
+        ![image](local_repo/figure/gpgcheck.png)
         
 
     
         
 
     * nameserver 생성
-        ![image](figure/nameserver.png)
+        ![image](local_repo/figure/nameserver.png)
 
 
