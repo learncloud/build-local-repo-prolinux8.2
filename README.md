@@ -17,6 +17,7 @@
 
 ### Filezilla를 이용해 파일 복사
 
+
 - 서버에 원격 연결한 후 파일 업로드
     ![image](local_repo/figure/con-filezila.png)
 
