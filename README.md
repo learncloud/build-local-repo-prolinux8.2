@@ -201,10 +201,7 @@ baseurl=file:///root/000.local-repo/local_repo
 enabled=1
 gpgcheck=0
 
-```
-
 #repo 확인
-```bash
 sudo dnf repolist
 sudo yum list
 
