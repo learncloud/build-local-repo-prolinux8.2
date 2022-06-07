@@ -158,3 +158,68 @@
 
 추가적으로 필요한 패키지가 있으면 해당 디렉토리로 다운받거나 복사합니다.
 
+----
+
+
+### 2. local\_repo 디렉토리를 로컬 레포를 구축할 노드로 이동
+- tar 압축
+```bash
+tar cvzf local_repo.tar.gz local_repo
+
+```
+
+- tar 압축해제
+```bash
+tar xvzf local_repo.tar.gz
+
+```
+
+
+
+
+### 3. 패키지들이 있는 디렉토리에 repo를 생성
+압축 해제한 디렉토리 기준
+```bash
+pushd ./local_repo
+createrepo_c ./
+modifyrepo_c modules.yaml ./repodata
+export LOCAL_REPO_PATH=$PWD
+popd
+
+```
+
+- createrepo_c 설치
+```bash
+# 설치가 안되면 namerserver가 없어서 그런것이니 설정해주자
+dnf localinstall ./common/createrepo/*.rpm
+
+```
+
+### 4. 노드에 local repo를 추가
+```bash
+dnf config-manager --add-repo file://${LOCAL_REPO_PATH}
+
+#repo 확인
+sudo dnf repolist
+sudo yum list
+
+```
+
+- Repo에 각종 설치를 할 수 있도록 사전 작업을 진행(이미 위에서 진행함) 
+
+    * `/etc/yum.repos.d/root_AppStream.repo`
+
+    * `/etc/yum.repos.d/root_BaseOS.repo` 
+
+    * `/etc/yum.repos.d/root_local_repo.repo`
+
+     * 모든 REPO에  `gpgcheck=0` 추가
+        
+        ![image](local_repo/figure/gpgcheck.png)
+        
+
+    
+        
+
+    * nameserver 생성
+        ![image](local_repo/figure/nameserver.png)
