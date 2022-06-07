@@ -185,13 +185,14 @@ popd
 ```
 
 ### 4. 노드에 local repo를 추가
+- test테스트
 ```bash
 dnf config-manager --add-repo file://${LOCAL_REPO_PATH}
 
 ```
 
 ### 4-1. local repo 수정
-
+- test테스트
 ```bash
 #local repo 이름 수정, repo이름도 mv로 수정
 vi {local repo이름}
@@ -203,13 +204,14 @@ enabled=1
 gpgcheck=0
 
 4-2. repo 확인
+- test테스트
 ```bash
 sudo dnf repolist
 sudo yum list
 
 ```
 
-
+- test테스트
 -[에러날경우 체크] Repo에 각종 설치를 할 수 있도록 사전 작업을 진행(이미 위에서 진행함) 
 
     * `/etc/yum.repos.d/root_AppStream.repo`
