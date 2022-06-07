@@ -26,8 +26,8 @@
 
     ```bash
     # cat {압축파일명}.tar* | tar xvf -
-    # root에 prolinux.iso가 있다고 가정
-
+    
+    # ex) 
     cat ProLinux-8.2_4.18.0-193.el8.x86_64.iso.tar* | tar xvf -
 
     ```
@@ -36,21 +36,14 @@
 
 
     ```bash
-    cd ~
+    cd ~/00.Local_Repo
     mkdir ./mnt
 
     # 일단은 배정받은 서버에는 진행하지 않았음
     # mount /dev/sda1 ./mnt
 
     # iso파일을 linux로 가져옵니다
-    # 파일이 있는곳에서 ./ProLinux.iso ./mnt
-
-    cd /home/jjh/
-    cp ProLinux-8.2_4.18.0-193.el8.x86_64.iso /root/
-    mount /root/ProLinux-8.2_4.18.0-193.el8.x86_64.iso ./mnt
-
-    cp -rT ./mnt/BaseOS ./BaseOS
-    cp -rT ./mnt/AppStream ./AppStream
+    mount ProLinux-8.4_4.18.0-305.el8.x86_64.iso ./mnt
 
     ```
 
