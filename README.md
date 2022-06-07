@@ -145,7 +145,7 @@
 ## 폐쇄망 구축 가이드
 ### 1. 필요한 패키지를 다운
 
-   ```bash
+```bash
     cd ~
     git clone https://github.com/learncloud/build-local-repo-prolinux8.2.git
     
@@ -154,7 +154,7 @@
     #tar cvzf local_repo.tar.gz local_repo
     #tar xvzf local_repo.tar.gz
     
-    ```
+```
 
 추가적으로 필요한 패키지가 있으면 해당 디렉토리로 다운받거나 복사합니다.
 
