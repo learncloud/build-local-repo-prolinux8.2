@@ -92,7 +92,7 @@
     name=AppStream.repo #레포 이름
     baseurl=file:///root/000.local-repo/mnt/AppStream
     enabled=1
-    **gpgcheck=0**
+    gpgcheck=0
     
     # 수정후 mv로 파일명 변경
     
