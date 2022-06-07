@@ -174,7 +174,7 @@ dnf localinstall ./common/createrepo/*.rpm
 
 
 ### 3. 패키지들이 있는 디렉토리에 repo를 생성
-- 압축 해제한 디렉토리 기준
+
 
 ```bash
 createrepo_c ./
@@ -185,14 +185,14 @@ popd
 ```
 
 ### 4. 노드에 local repo를 추가
-- test테스트
+
 ```bash
 dnf config-manager --add-repo file://${LOCAL_REPO_PATH}
 
 ```
 
 ### 4-1. local repo 수정
-- test테스트
+
 ```bash
 #local repo 이름 수정, repo이름도 mv로 수정
 vi {local repo이름}
@@ -211,7 +211,7 @@ sudo yum list
 
 ```
 
-- test테스트
+
 -[에러날경우 체크] Repo에 각종 설치를 할 수 있도록 사전 작업을 진행(이미 위에서 진행함) 
 
     * `/etc/yum.repos.d/root_AppStream.repo`
