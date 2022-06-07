@@ -49,13 +49,16 @@
 
 ### repo 설정 변경
 
-- 기존 레포가 존재할 시 비활성화
+- 기존 레포 비활성화
     ```bash
-    cd /root
+    cat /etc/*release*
+    cd mnt
     export LOCAL_REPO_ROOT=$PWD
-    dnf config-manager --set-disabled BaseOS
-    dnf config-manager --set-disabled AppStream
 
+    yum repolist
+    dnf config-manager --set-disabled {레포ID}
+    dnf config-manager --set-disabled {레포ID}
+    
     ```
 
 - 레포 신규 추가
@@ -70,19 +73,53 @@
     ```
 
 
-- repo를 신규 생성
+- Repo 확인 및 수정
 
     ```bash
     #/etc/yum.repos.d/ 파일안에는 새로만들 .repo(ex. Prolinux.repo는 삭제) 파일말고 아무것도 없어야함
-    cd /etc/yum.repos.d/
+    cd /etc/yum.repos.d/ 
+    
+    ```
+    
+- AppStream와 Base 이름 수정
+    ```bash
+    ### AppStream
+    
+    vi {AppStream.레포 이름}
+    
+    [AppStream] #레포 ID
+    name=AppStream.repo #레포 이름
+    baseurl=file:///root/000.local-repo/mnt/AppStream
+    enabled=1
+    **gpgcheck=0**
+    
+    # 수정후 mv로 파일명 변경
+    
+    
+    ###  Base
+    
+    vi {BaseOS.레포 이름}
 
+    [BaseOS] #레포 ID
+    name=BaseOS.repo #레포 이름
+    baseurl=file:///root/000.local-repo/mnt/BaseOS
+    enabled=1
+    gpgcheck=0
+    
+    # 수정후 mv로 파일명 변경
+    
 
-    # root_AppStream.repo, root_BaseOS.repo에 gpgcheck 추가
-    gpgcheck=0 
+    ```
+
+    
 
 
     # 정상동작 확인
-    yum update
+    ```bash
+    ## /etc/yum.repos.d/ 에서 enabled=1, gpgcheck=0 확인
+    yum update -y
+    yum install -y dnf
+    yum install -y git
     yum repolist
 
     ```
@@ -108,14 +145,16 @@
 
 ## 폐쇄망 구축 가이드
 ### 1. 필요한 패키지를 다운
-```bash
-    cd ~
-    git clone https://github.com/learncloud/build-local-repo-prolinux8.2.git
-
-    # OR
-    # scp -r ck-ftp@192.168.1.150:/home/ck-ftp/k8s_package/el8/redhat ./local_repo
-
-```
+    ```bash
+        cd ~
+        git clone https://github.com/learncloud/build-local-repo-prolinux8.2.git
+    
+        # OR
+        # scp -r ck-ftp@192.168.1.150:/home/ck-ftp/k8s_package/el8/redhat ./local_repo
+        #tar cvzf local_repo.tar.gz local_repo
+        #tar xvzf local_repo.tar.gz
+    
+    ```
 
 추가적으로 필요한 패키지가 있으면 해당 디렉토리로 다운받거나 복사합니다.
 
