@@ -174,7 +174,8 @@ dnf localinstall ./common/createrepo/*.rpm
 
 
 ### 3. 패키지들이 있는 디렉토리에 repo를 생성
-압축 해제한 디렉토리 기준
+- 압축 해제한 디렉토리 기준
+
 ```bash
 createrepo_c ./
 modifyrepo_c modules.yaml ./repodata
