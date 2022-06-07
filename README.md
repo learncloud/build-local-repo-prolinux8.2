@@ -201,15 +201,15 @@ baseurl=file:///root/000.local-repo/local_repo
 enabled=1
 gpgcheck=0
 
-#repo 확인
+4-2. repo 확인
+```bash
 sudo dnf repolist
 sudo yum list
 
 ```
 
 
-
--**[에러날경우 체크]** Repo에 각종 설치를 할 수 있도록 사전 작업을 진행(이미 위에서 진행함) 
+-[에러날경우 체크] Repo에 각종 설치를 할 수 있도록 사전 작업을 진행(이미 위에서 진행함) 
 
     * `/etc/yum.repos.d/root_AppStream.repo`
 
