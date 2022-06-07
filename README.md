@@ -190,6 +190,7 @@ dnf config-manager --add-repo file://${LOCAL_REPO_PATH}
 ```
 
 ### 4-1. local repo 수정
+
 ```bash
 #local repo 이름 수정, repo이름도 mv로 수정
 vi {local repo이름}
@@ -203,11 +204,11 @@ gpgcheck=0
 ```
 
 #repo 확인
+```bash
 sudo dnf repolist
 sudo yum list
 
 ```
-
 
 
 
