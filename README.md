@@ -82,6 +82,7 @@
     ```
     
 - AppStream와 Base 이름 수정
+
     ```bash
     ### AppStream
     
@@ -145,14 +146,15 @@
 
 ## 폐쇄망 구축 가이드
 ### 1. 필요한 패키지를 다운
+
     ```bash
-        cd ~
-        git clone https://github.com/learncloud/build-local-repo-prolinux8.2.git
+    cd ~
+    git clone https://github.com/learncloud/build-local-repo-prolinux8.2.git
     
-        # OR
-        # scp -r ck-ftp@192.168.1.150:/home/ck-ftp/k8s_package/el8/redhat ./local_repo
-        #tar cvzf local_repo.tar.gz local_repo
-        #tar xvzf local_repo.tar.gz
+    # OR
+    # scp -r ck-ftp@192.168.1.150:/home/ck-ftp/k8s_package/el8/redhat ./local_repo
+    #tar cvzf local_repo.tar.gz local_repo
+    #tar xvzf local_repo.tar.gz
     
     ```
 
